@@ -2,9 +2,10 @@ import * as React from 'react'
 import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 
+const erzStyle = {color:'red', fontSize:'.6rem', marginBottom: 3}
 
 const Erz = ({label}) => (
-  <p style={{color:'red', fontSize:'.6rem', marginBottom: 3}}>{label} must be valid</p>  
+  <p style={erzStyle}>{label} must be valid</p>  
 )
 
 const App = ({
@@ -16,11 +17,15 @@ const App = ({
   <Form>
 
 <div>
-      <div> { touched.email && errors.email && <Erz label="Email" /> }
+      <div> 
+        { touched.email && errors.email && <Erz label="Email" /> }
         <Field type="email" name="email" placeholder="Email" />
       </div>
 
-      <div> { touched.password && errors.password  && <Erz label="Password" /> }
+      <div> 
+        { touched.password && errors.password && 
+          <p style={erzStyle}>{errors.password}</p> 
+        }
         <Field type="password" name="password" placeholder="Password" />
       </div>
 
