@@ -8,15 +8,19 @@ const App = ({
 }) => (
 
   <div>
+
       <input type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} />
+      <input type="password" name="password" placeholder="Password" value={values.password} onChange={handleChange} />
+
   </div>
 
 )
 
 const FormikApp = withFormik({
-  mapPropsToValues(){
+  mapPropsToValues({ email, password }){
     return {
-        email: 'test1234'  
+        email: email || 'example@email.com',
+        password: password || ''
     }  
   }
 })(App)
