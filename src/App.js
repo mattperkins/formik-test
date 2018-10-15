@@ -12,7 +12,7 @@ const App = ({
 
       <input type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} />
       <input type="password" name="password" placeholder="Password" value={values.password} onChange={handleChange} />
-      <button>Submit</button>
+      <button type="submit">Submit</button>
 
   </form>
 
@@ -24,7 +24,11 @@ const FormikApp = withFormik({
         email: email || 'example@email.com',
         password: password || ''
     }  
+  },
+  handleSubmit(values) {
+    console.log(values) 
   }
+
 })(App)
 
 export default FormikApp
