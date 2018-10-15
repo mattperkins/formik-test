@@ -7,7 +7,8 @@ const erzStyle = {color:'red', fontSize:'.6rem', marginBottom: 3}
 const App = ({
     values,
     errors,
-    touched
+    touched,
+    isSubmitting
 }) => (
 
   <Form>
@@ -27,7 +28,7 @@ const App = ({
         <Field type="password" name="password" placeholder="Password" />
       </div>
 
-      <button type="submit">Submit</button>
+      <button disabled={isSubmitting} type="submit">Submit</button>
 </div>
 
       <div>
@@ -60,8 +61,16 @@ const FormikApp = withFormik({
    email: Yup.string().email('Email not valid').required('Email is required'),
    password: Yup.string().min(4, 'Password must be at least 4 characters').required('Password is required') 
   }), // end Yup
-  handleSubmit(values) {
-    console.log(values) 
+  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+    setTimeout(() => {
+      if(values.email === 'test@email.com') {
+        setErrors({ email: 'Email already exists' })
+      } else {
+        resetForm()
+      }
+    setSubmitting(false)
+  }, 1000)
+   //console.log(values) 
   }
 
 })(App)
