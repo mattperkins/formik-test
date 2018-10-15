@@ -17,7 +17,7 @@ return (
 <div className="row">
 
 <div className="col-12">
-  <h1>Hello, World!</h1>
+  <h1>Formik</h1>
 </div>
 
 </div>
