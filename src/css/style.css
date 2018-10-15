@@ -16,11 +16,13 @@ input {
 }
 button{
  background-color: var(--blue);
- color: var(--white)
+ color: var(--white);
+ border-radius: 6px;
 }
 input, button{
- font-size: 1rem;
+ font-size: .8rem;
  letter-spacing: 1px;
  border: 1px solid var(--blue);
  outline: 0;
+ padding: 4px;
 }
