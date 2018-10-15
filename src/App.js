@@ -3,8 +3,7 @@ import { withFormik, Form, Field } from 'formik'
 import Yup from 'yup'
 
 const App = ({
-    values,
-    handleChange
+    values
 }) => (
 
   <Form>
