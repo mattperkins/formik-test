@@ -12,16 +12,21 @@ const App = ({
       <Field type="email" name="email" placeholder="Email" />
       <Field type="password" name="password" placeholder="Password" />
       <button type="submit">Submit</button>
+      <div>
+      <Field type="checkbox" name="newsletter" checked={values.newsletter} />
+        Sign up to our newsletter
+      </div>
 
   </Form>
 
 )
 
 const FormikApp = withFormik({
-  mapPropsToValues({ email, password }){
+  mapPropsToValues({ email, password, newsletter }){
     return {
         email: email || 'example@email.com',
-        password: password || ''
+        password: password || '',
+        newsletter: newsletter || false
     }  
   },
   handleSubmit(values) {
