@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { withFormik, Form } from 'formik'
+import { withFormik, Form, Field } from 'formik'
 import Yup from 'yup'
 
 const App = ({
@@ -9,8 +9,8 @@ const App = ({
 
   <Form>
 
-      <input type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} />
-      <input type="password" name="password" placeholder="Password" value={values.password} onChange={handleChange} />
+      <Field type="email" name="email" placeholder="Email" />
+      <Field type="password" name="password" placeholder="Password" />
       <button type="submit">Submit</button>
 
   </Form>
