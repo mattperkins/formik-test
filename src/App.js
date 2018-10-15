@@ -4,15 +4,17 @@ import Yup from 'yup'
 
 const App = ({
     values,
-    handleChange
+    handleChange,
+    handleSubmit
 }) => (
 
-  <div>
+  <form onSubmit={handleSubmit}>
 
       <input type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} />
       <input type="password" name="password" placeholder="Password" value={values.password} onChange={handleChange} />
+      <button>Submit</button>
 
-  </div>
+  </form>
 
 )
 
