@@ -16,11 +16,11 @@ const App = ({
   <Form>
 
 <div>
-      <div> { touched.email && errors.email && <Erz label="email" /> }
+      <div> { touched.email && errors.email && <Erz label="Email" /> }
         <Field type="email" name="email" placeholder="Email" />
       </div>
 
-      <div> { touched.password && errors.password  && <Erz label="password" /> }
+      <div> { touched.password && errors.password  && <Erz label="Password" /> }
         <Field type="password" name="password" placeholder="Password" />
       </div>
 
@@ -46,7 +46,7 @@ const App = ({
 const FormikApp = withFormik({
   mapPropsToValues({ email, password, newsletter, plan }){
     return {
-        email: email || 'example@email.com',
+        email: email || '',
         password: password || '',
         newsletter: newsletter || false,
         plan: plan || 'free'
