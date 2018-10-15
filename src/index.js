@@ -5,6 +5,8 @@ import registerServiceWorker from './registerServiceWorker'
 import './css/reset.css'
 import './css/style.css'
 
+import App from './App'
+
 // main ("ROOT") component 
 class Root extends React.Component {
 
@@ -17,7 +19,7 @@ return (
 <div className="row">
 
 <div className="col-12">
-  <h1>Formik</h1>
+  <App />
 </div>
 
 </div>
