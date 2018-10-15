@@ -26,3 +26,8 @@ input, button{
  outline: 0;
  padding: 4px;
 }
+input[type=checkbox]{ 
+ height: 20px;  
+ width: 20px;
+ border-radius: 50px;
+}
