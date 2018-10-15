@@ -18,6 +18,7 @@ button{
  background-color: var(--blue);
  color: var(--white);
  border-radius: 6px;
+ margin-bottom: 10px;
 }
 input, button{
  font-size: .8rem;
