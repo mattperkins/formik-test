@@ -4,8 +4,7 @@ import Yup from 'yup'
 
 const App = ({
     values,
-    handleChange,
-    handleSubmit
+    handleChange
 }) => (
 
   <Form>
