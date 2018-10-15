@@ -4,10 +4,6 @@ import * as Yup from 'yup'
 
 const erzStyle = {color:'red', fontSize:'.6rem', marginBottom: 3}
 
-const Erz = ({label}) => (
-  <p style={erzStyle}>{label} must be valid</p>  
-)
-
 const App = ({
     values,
     errors,
@@ -18,7 +14,9 @@ const App = ({
 
 <div>
       <div> 
-        { touched.email && errors.email && <Erz label="Email" /> }
+        { touched.email && errors.email && 
+          <p style={erzStyle}>{errors.email}</p> 
+        }
         <Field type="email" name="email" placeholder="Email" />
       </div>
 
@@ -59,8 +57,8 @@ const FormikApp = withFormik({
   },
   // integrate Yup
   validationSchema: Yup.object().shape({
-   email: Yup.string().email().required(),
-   password: Yup.string().min(4).required() 
+   email: Yup.string().email('Email not valid').required('Email is required'),
+   password: Yup.string().min(4, 'Password must be at least 4 characters').required('Password is required') 
   }), // end Yup
   handleSubmit(values) {
     console.log(values) 
