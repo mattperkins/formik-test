@@ -13,7 +13,7 @@ const App = ({
       <Field type="password" name="password" placeholder="Password" />
       <button type="submit">Submit</button>
       <div>
-      <Field type="checkbox" name="newsletter" checked={values.newsletter} />
+        <Field type="checkbox" name="newsletter" checked={values.newsletter} />
         Sign up to our newsletter
       </div>
 
